@@ -136,6 +136,16 @@ public class DesignForExtensionCheckTest
     }
 
     @Test
+    public void testCompactSource() throws Exception {
+        final String[] expected = {
+            "13:5: " + getCheckMessage(MSG_KEY, "Test", "m1"),
+        };
+        verifyWithInlineConfigParser(
+                getNonCompilablePath("InputDesignForExtensionCompactSource.java"),
+                expected);
+    }
+
+    @Test
     public void testRequiredJavadocPhrase() throws Exception {
         final String className = "InputDesignForExtensionRequiredJavadocPhrase";
         final String[] expected = {
